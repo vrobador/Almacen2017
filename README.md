@@ -3,3 +3,5 @@ ALMACEN2017
 
 ##Proyecto realizado en php
 Proyecto en php.
+
+modificado desde github
