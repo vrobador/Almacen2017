@@ -1,0 +1,61 @@
+@charset "utf-8";
+caption{
+text-align: center;font-size:1.3em;border-style: ridge;background-color: #E6E6E6;color:red;
+}
+.nuevo{
+	width:350px;
+	margin:0px auto;
+	padding:5px;
+}
+fieldset{
+	width:400px;
+	margin:auto;
+	border-color:2px solid yellow;
+	margin-bottom:20px;
+}
+.centrado{
+	margin: auto;
+	text-align: center;
+	margin-top:10px;
+}
+#tabla_resultados{
+margin: auto;
+width: 100%;
+text-align: center;
+border: dotted 1px black;
+background-color: #31B3E1;
+overflow-x: auto;
+overflow-y: auto;
+
+}
+
+
+th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: .7em;
+	background: #666;
+	color: #FFF;
+	padding: 2px 6px;
+	border-collapse: separate;
+	border: 1px solid #000;
+}
+
+td {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: .7em;
+	border: 1px solid #DDD;
+}
+#rejilla{	margin: auto; }
+#rejilla a {
+width: 35px;
+font-weight: normal;
+padding-left: 10px;
+padding-right: 10px;
+background-color: #D6D6D6;
+color: black;
+text-decoration: none;
+}
+#rejilla a:hover {
+background-color:rgb(46, 132, 213);
+color: white;
+}

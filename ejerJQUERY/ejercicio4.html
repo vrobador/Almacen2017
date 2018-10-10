@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>jQuery</title>
+<script src="../js/jquery.js"></script>
+<script type="text/javascript">
+this.popup = function(){	
+xOffset = 10;
+yOffset = 20;		
+
+$(".tooltip").hover(function(e){	
+   this.texte=this.id=="div1" ? "mensaje1" :"mensaje2";			
+   this.title = "";								
+	$("body").append("<p id='tooltip'>"+ this.texte +"</p>");
+	
+	$("#tooltip").css("top",(e.pageY - xOffset) + "px")
+    .css("left",(e.pageX + yOffset) + "px")
+    .fadeIn("fast");		
+},
+function(){
+this.title = this.texte;		
+$("#tooltip").remove();
+});	
+
+$(".tooltip").mousemove(function(e){
+$("#tooltip")
+.css("top",(e.pageY - xOffset) + "px")
+.css("left",(e.pageX + yOffset) + "px");
+});			
+};
+
+this.zoom_image = function(){	
+xOffset = 10;
+yOffset = 30;
+$("a.zoom").hover(function(e){
+	
+	this.texte = this.title;
+	this.title = "";	
+	var legende = (this.texte != "") ? "<br/>" + this.texte : "";
+	$("body").append("<p id='zoom'><img src='"+ this.href +"' alt='Visualización imagen' />"+ legende +"</p>");				
+$("#zoom").css("top",(e.pageY - xOffset) + "px").css("left",(e.pageX + yOffset) + "px").fadeIn("slow");						
+},function(){
+	this.title = this.texte;	
+	$("#zoom").remove();
+});	
+
+$("a.zoom").mousemove(function(e){
+	$("#zoom").css("top",(e.pageY - xOffset) + "px").css("left",(e.pageX + yOffset) + "px");
+});
+			
+};
+$(document).ready(function(){
+zoom_image();
+popup();
+});
+</script>
+<style>
+body { margin: 0px;
+	 padding: 10px;
+	 font:80% Arial, sans-serif;}
+h2 { clear:both;
+     font-size:160%;
+     font-weight:normal;
+     margin: 0px;
+     padding-top: 10px;
+     padding-bottom: 15px;}
+a { text-decoration:none;
+    color:black;}
+img { border: 1px solid black;}
+ul,li { margin: 0px;
+	  padding: 0px;}
+li { list-style: none;
+     float: left;
+     display: inline;
+     margin-right: 10px;}
+#zoom { position: absolute;
+	     border: 1px solid #333;
+	     background: #333;
+	     padding: 3px;
+	     display: none;
+	     color: #fff;}
+div{
+	width:80px;
+	height:46px;
+	border:1px solid black;
+	float:left;
+}
+#tooltip { position: absolute;
+             border: 1px solid black;
+             background: #9cf;
+             padding:2px 5px;
+             display: none;}	
+</style>
+</head>
+<body>
+<h2>Efecto de Zoom con leyenda</h2>
+<div id="div1" class="tooltip">1</div>
+<ul>
+<li><a href="../images/oso1.jpg" class="zoom" title="Oso polar en peligro">
+<img src="../images/pt_oso1.jpg" alt=""></a></li>
+<li><a href="../images/oso2.jpg" class="zoom" title="Oso polar en peligro">
+<img src="../images/pt_oso2.jpg" alt=""></a></li>
+<li><a href="../images/oso3.jpg" class="zoom" title="Oso polar en peligro">
+<img src="../images/pt_oso3.jpg" alt=""></a></li>
+</ul>
+<div id="div2" class="tooltip">2</div>
+
+
+</body>
+</html>
